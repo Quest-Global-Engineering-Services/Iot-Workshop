@@ -42,12 +42,12 @@ def publish_to_aws(mqtt_client, topic, message):
 
 def load_aws_config():
     return {
-        "host": 'a3h9q5a7ne3mnp-ats.iot.us-east-1.amazonaws.com',
+        "host": 'abcdefghujk.iot.us-east-1.amazonaws.com',
         "port": 8883,
         "client_id": 'RaspThing',
         "ca_path": './AmazonRootCA1.pem',
         "cert_path": './9adf8ea65911a43e615e37e62bab614b22dfb134b5b94b45e7fcb9068e5da8d5-certificate.pem.crt',
-        "key_path": './Downloads/9adf8ea65911a43e615e37e62bab614b22dfb134b5b94b45e7fcb9068e5da8d5-private.pem.key',
+        "key_path": './9adf8ea65911a43e615e37e62bab614b22dfb134b5b94b45e7fcb9068e5da8d5-private.pem.key',
         "publisherTopic": "DHTSENSE",
         "subscriberTopic": "DHTThresholdReceiver"
     }
