@@ -1,12 +1,9 @@
 # DHTtoAWSIoTPublisher.py 
 
 import time
-import board
-import adafruit_dht
 import json
 import logging 
 import datetime
-import paho.mqtt.client as mqtt 
 from RPLCD.i2c import CharLCD 
 from time import sleep
 
