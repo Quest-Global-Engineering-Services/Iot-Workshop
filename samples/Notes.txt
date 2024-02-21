@@ -1,2 +1,9 @@
 AWS account
 https://381492212013.signin.aws.amazon.com/console
+
+Install Pacakge
+sudo pip install RPLCD
+sudo pip install paho-mqtt==1.6.1
+sudo pip3 install Adafruit_DHT
+
+sudo raspi-config
