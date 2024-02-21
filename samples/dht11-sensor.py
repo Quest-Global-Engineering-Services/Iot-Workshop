@@ -5,8 +5,9 @@ import time
 
  
 dht_sensor = adafruit_dht.DHT11(board.D4)
+try:
 
-while True:
+    while True:
         temperature = dht_sensor.temperature
         humidity = dht_sensor.humidity
         if humidity is not None and temperature is not None:
@@ -14,3 +15,7 @@ while True:
         else:
             print('Failed to get reading. Try again!');
         time.sleep(3);
+except KeyboardInterrupt:
+    pass
+finally:    
+    logging.info('client disconnected')
