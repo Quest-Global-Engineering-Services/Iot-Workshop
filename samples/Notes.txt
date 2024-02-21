@@ -1,9 +1,18 @@
 AWS account
+ https://github.com/Quest-Global-Engineering-Services/Iot-Workshop
+https://aws.amazon.com/console/
 https://381492212013.signin.aws.amazon.com/console
 
 Install Pacakge
 sudo pip install RPLCD
-sudo pip install paho-mqtt==1.6.1
-sudo pip3 install Adafruit_DHT
-
 sudo raspi-config
+
+pip install adafruit-circuitpython-dht
+sudo apt install libgpiod2
+
+
+sudo pip install paho-mqtt==1.6.1
+*** need not install - sudo pip install Adafruit_DHT
+
+
+
