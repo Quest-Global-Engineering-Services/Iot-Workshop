@@ -16,8 +16,10 @@ def lambda_handler(event, context):
         # More specific Timestream query to fetch only required fields
         # and data from the last one minute
         thresholdTemperature = int(os.environ['THRESHOLD_TEMPERATURE'])         
-        thresholdHumidity = int(os.environ['THRESHOLD_HUMIDITY'])        
-        query = f"SELECT device, measure_name,measure_value::bigint,time FROM sensordb.DHTVariables WHERE ((measure_name = 'temperature'  AND  measure_value::bigint >= {thresholdTemperature}) OR (measure_name = 'humidity'  AND  measure_value::bigint >= {thresholdHumidity}))   AND time >= ago(1m)"
+        thresholdHumidity = int(os.environ['THRESHOLD_HUMIDITY'])
+        database = os.environ['DATABASE']
+        table = os.environ['TABLE']
+        query = f"SELECT device, measure_name,measure_value::bigint,time FROM {database}.{table} WHERE ((measure_name = 'temperature'  AND  measure_value::bigint >= {thresholdTemperature}) OR (measure_name = 'humidity'  AND  measure_value::bigint >= {thresholdHumidity}))   AND time >= ago(1m)"
         print(query)
         query_result = timestream.query(QueryString=query)  
         print(query_result)
