@@ -14,5 +14,19 @@ sudo apt install libgpiod2
 sudo pip install paho-mqtt==1.6.1
 *** need not install - sudo pip install Adafruit_DHT
 
+SQL Statement - SELECT temperature,humidity FROM 'DHTSENSE'
+
+Dimension 
+----------
+timestamp  - ${timestamp}
+device - ${device}
+
+Environment Variables 
+---------------------
+THRESHOLD_HUMIDITY
+THRESHOLD_TEMPERATURE
+DATABASE
+TABLE
+
 
 
