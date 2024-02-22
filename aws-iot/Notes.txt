@@ -8,6 +8,7 @@ sudo pip install RPLCD
 sudo raspi-config
 
 pip install adafruit-circuitpython-dht
+pip install Adafruit-Blinka
 sudo apt install libgpiod2
 
 

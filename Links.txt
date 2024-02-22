@@ -1,0 +1,2 @@
+https://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/python-setup
+https://github.com/adafruit/Adafruit_Blinka/issues/259
