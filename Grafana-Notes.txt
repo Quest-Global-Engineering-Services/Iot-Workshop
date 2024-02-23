@@ -1,0 +1,79 @@
+1. Create IAM Role for Grafana server EC2 instance and attach time stream read only access policy
+	- Take IAM -> Role
+	- Click Create Role
+	- Select EC2
+	- Select AmazonTimestreamReadOnlyAccess policy
+	- Enter Role name
+
+2. Create Security Group
+	- Take EC2 feature Security groups
+	- Give security group name
+	- Edit inbound rules
+	- Add following ports 
+		- Type: SSH Port Range:22 Source: Anywhere-IPv4
+		- Type: Custom Port Range:3000 Source: Anywhere-IPv4
+	
+3. Create EC2
+	- Launch instance
+	- Enter EC2 name
+	- Create new key pair -> Enter key pair name -> Create key pair
+	- Select security group created above
+	- Select advanced details and select IAM role created above for IAM instance profile
+4. Connect to ec2 instance
+	- EC2-> Instances -> Click on instance
+	- Click on Connect
+
+5. Grafana installation
+
+sudo yum update -y
+
+sudo nano /etc/yum.repos.d/grafana.repo
+
+paste following in the editor and save file
+
+[grafana]
+name=grafana
+baseurl=https://packages.grafana.com/oss/rpm
+repo_gpgcheck=1
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.grafana.com/gpg.key
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+
+
+sudo yum install grafana -y
+
+sudo systemctl daemon-reload
+
+sudo systemctl start grafana-server
+
+sudo systemctl status grafana-server
+
+6. Open http://<Public IPv4 DNS>:3000
+user name : admin
+pass word : admin
+Change password when prompted
+
+7. Install Amazon TimeStream Plugin
+	- Take connections
+	- Add new connection 
+	- Select Amazon Time Stream and install
+
+8. Add new data sources 
+	- Data Sources -> Add new data sources
+	- Select Amazon Time Stream
+	- Select region
+	- Select Database
+	- Select Table
+	- Click Save & test
+9. Add new dashboard
+	- Create Dashboard
+	- Add new visualisation
+	- Slect time stream source 
+	- Add following queries and apply
+	
+SELECT time,measure_name, measure_value::bigint as humidity FROM "sensordb"."DHTVariables" where measure_name in ('humidity')
+
+SELECT time,measure_name, measure_value::bigint as temperature FROM "sensordb"."DHTVariables" where measure_name in ('temperature')
+
