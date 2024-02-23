@@ -51,7 +51,7 @@ def lambda_handler(event, context):
                 message = json.dumps({'Device':device_name,'Timestamp': time_stamp_unix, 'Parameter': measure_name, 'Value': measure_value})
                 
                 # Define the MQTT topic
-                topic = 'DHTThresholdReceiver'
+                topic = os.environ['PUBLISHER_TOPIC']
 
                 # Publish the message to AWS IoT
                 iot.publish(

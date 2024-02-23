@@ -3,7 +3,7 @@ AWS account
 https://aws.amazon.com/console/
 https://381492212013.signin.aws.amazon.com/console
 
-Install Pacakge
+
 sudo pip install RPLCD
 sudo raspi-config
 
@@ -28,6 +28,7 @@ THRESHOLD_HUMIDITY
 THRESHOLD_TEMPERATURE
 DATABASE
 TABLE
+PUBLISHER_TOPIC
 
 
 
