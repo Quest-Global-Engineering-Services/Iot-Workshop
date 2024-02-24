@@ -31,7 +31,7 @@ def publish_to_aws(mqtt_client, topic, message):
 
 def load_aws_config():
     return {
-        "host": 'a3h9q5a7ne3mnp-ats.iot.us-east-1.amazonaws.com',
+        "host": 'abcedfghijk-ats.iot.us-east-1.amazonaws.com',
         "port": 8883,
         "client_id": 'RaspThing',
         "ca_path": './AmazonRootCA1.pem',
