@@ -1,2 +1,11 @@
+https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html
+https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html
+https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html
+https://docs.aws.amazon.com/lambda/latest/dg/welcome.html
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
+
+
+
+Issues
 https://learn.adafruit.com/dht-humidity-sensing-on-raspberry-pi-with-gdocs-logging/python-setup
 https://github.com/adafruit/Adafruit_Blinka/issues/259
